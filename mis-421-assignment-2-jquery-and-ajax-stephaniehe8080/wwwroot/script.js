@@ -48,8 +48,24 @@ function changeBackgroundImage() {
 
 function showTime() {
     var now = new Date();
-    var time = now.getHours() + ":" + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
-    $('#time').css('visibility', 'visible').html(time).dialog();
+
+    // convert to CDT
+    var cstOffset = -5.0;
+    var offset = now.getTimezoneOffset() / 60;
+    now.setHours(now.getHours() + offset + cstOffset);
+
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var amOrPm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert hours to 12-hour format and prepend 0 to single digit minutes
+    hours = hours % 12;
+    hours = hours ? hours : 12; // 0 hour should be 12
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    var timeStr = hours + ':' + minutes + ' ' + amOrPm + ' CDT';
+
+    $('#time').css('visibility', 'visible').html(timeStr).dialog();
 }
 
 $(document).ready(function() {
