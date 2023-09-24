@@ -12,7 +12,7 @@ function apiSearch(count, isLuckySearch) {
   $.ajax({
       url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
       beforeSend: function (xhrObj) {
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", process.env.API_KEY);
+          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "143df1d46d274efaa1c5f3def5afd9a4");
       },
       type: "GET",
     })
