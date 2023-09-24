@@ -1,0 +1,130 @@
+body {
+    min-height: 100vh;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1648061557966-8e30f972f0be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    border: 5px solid darkgray;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#searchEngine {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#searchEngineName {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#searchEngineName:hover {
+    color: blue;
+    font-weight: bold;
+}
+
+#searchResults, #time {
+    visibility: hidden;
+}
+
+#queryContainer, #buttonContainer {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#buttonContainer {
+    justify-content: space-between;
+}
+
+#query {
+    flex-grow: 1;
+    border: 1px solid red; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    transition: border 0.3s, box-shadow 0.3s; 
+}
+
+#query:focus {
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 50px red; 
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchBtn:hover {
+    background-color: #45a049; 
+}
+
+#timeBtn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#timeBtn:hover {
+    background-color: #0056b3;
+}
+
+
+#luckyBtn {
+    padding: 10px 20px;
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+#luckyBtn:hover {
+    color: #FFA500;
+}
+
+#luckyBtn:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background: url('https://images.unsplash.com/photo-1500670602153-5e2dd3c75f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80') no-repeat center center; 
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.3;
+        transform: scaleY(1) scaleX(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(0.8) scaleX(1.1);
+    }
+}
+
