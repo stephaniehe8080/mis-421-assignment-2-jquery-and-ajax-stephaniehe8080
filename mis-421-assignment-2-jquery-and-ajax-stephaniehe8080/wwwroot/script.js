@@ -1,13 +1,13 @@
-var len;
-var results = '';
-
 function apiSearch(count, isLuckySearch) {
   var params = {
     "q": $("#query").val(),
     "count": count,
     "offset": "0",
     "mkt": "en-us"
-  };
+    };
+
+    var len;
+    var results = '';
 
   $.ajax({
       url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
